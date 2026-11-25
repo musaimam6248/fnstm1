@@ -1,0 +1,5 @@
+Using PHP: C:\xamppp\php\php.exe
+Running database migration...
+Database migration completed successfully.
+Starting offline server at http://127.0.0.1:8000
+Press Ctrl+C to stop.

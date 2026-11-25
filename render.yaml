@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: fnph-kaduna-portal
+    runtime: docker
+    plan: starter
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    disk:
+      name: fnph-kaduna-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: APP_TIMEZONE
+        value: Africa/Lagos
+      - key: DB_DSN
+        value: sqlite:/var/data/app.db
+      - key: UPLOAD_PATH
+        value: /var/data/uploads
+      - key: BACKUP_PATH
+        value: /var/data/backups
+      - key: ADMIN_DEFAULT_USERNAME
+        value: admin
+      - key: ADMIN_DEFAULT_PASSWORD
+        sync: false
+
